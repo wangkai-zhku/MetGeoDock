@@ -80,3 +80,6 @@ wk_gmdock.c
 ORI_PDB_LIGAND
 OUTPUT_DOCK
 envs
+
+# 早期 C 原型（历史参考，不随 Python 包分发）
+gpml_dock*.c
