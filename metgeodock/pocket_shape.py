@@ -13,9 +13,9 @@ Measured quantities (all from the receptor structure, no ligands involved):
   max_reach       longest straight line from the metal through free space (depth proxy)
 
 Classification:
-  channel  (深窄通道): elongation >= 2.0 and mouth_frac <= 0.45   -> flexibility helps
-  bowl     (浅宽漏斗): max_reach < 11 A or mouth_frac > 0.60       -> flexibility hurts
-  mixed    otherwise                                             -> term is off
+  channel  elongation >= 2.0 and mouth_frac <= 0.45   -> flexibility helps
+  bowl     max_reach < 11 A or mouth_frac > 0.60       -> flexibility hurts
+  mixed    otherwise                                  -> term is off
 """
 from __future__ import annotations
 
