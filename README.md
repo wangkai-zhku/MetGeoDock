@@ -1,5 +1,11 @@
 # MetGeoDock
 
+[![PyPI](https://img.shields.io/pypi/v/metgeodock)](https://pypi.org/project/metgeodock/)
+[![Python](https://img.shields.io/pypi/pyversions/metgeodock)](https://pypi.org/project/metgeodock/)
+[![Downloads](https://img.shields.io/pypi/dm/metgeodock)](https://pypi.org/project/metgeodock/)
+[![License](https://img.shields.io/badge/license-academic%20%2F%20non--commercial-blue)](LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/wangkai-zhku/MetGeoDock?style=social)](https://github.com/wangkai-zhku/MetGeoDock)
+
 Geometry-driven molecular docking and virtual screening for **metalloproteins**. The sampler places
 ligand donors on the vacant vertices of the metal coordination sphere instead of searching the whole
 pocket, and the scoring function reads coordination geometry directly. Ten ions are supported: Zn,
@@ -13,7 +19,7 @@ result = dock_ligand(protein, ligand, metal="zn")
 ## Install
 
 ```bash
-pip install metgeodock                 # core: numpy, scipy, pandas, pyyaml
+pip install metgeodock                 # from PyPI; core: numpy, scipy, pandas, pyyaml
 pip install "metgeodock[chem]"         # + RDKit (SDF/MOL2 input, donor chemistry)
 pip install "metgeodock[chem,ml,prep]" # + torch/scikit-learn, OpenMM (H rebuild)
 ```
