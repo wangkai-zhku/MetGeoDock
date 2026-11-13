@@ -84,6 +84,13 @@ Both examples ship their own receptor and ligands under `examples/`.
 Defaults: `--no-keep-water`, `--coord-water 2`, `--multi-metal`, `--rerank metgeo`. Lower `score` is
 better. Use `--top-n 100` to truncate the output.
 
+## Benchmark data
+
+`datasets/bench22/` carries the 22-target screening benchmark: `targets.csv` (metal, PDB entry,
+coordination number, per-target AUROC) and `ligands.csv` (23,920 molecules with SMILES, active/decoy
+label and MetGeo score). Receptors are named by PDB entry rather than redistributed; `metgeodock
+prepare` adds hydrogens once you have them.
+
 ## Citation
 
 If you use MetGeoDock, please cite the paper (see `CITATION.cff`). The geometry-matching idea builds
