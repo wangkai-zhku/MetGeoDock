@@ -64,6 +64,7 @@ def screen_library(
     coord_water: int = 2,
     donor_chem_scale: float = 0.0,
     thermo: bool = False,
+    include_chem: bool = True,
 ) -> pd.DataFrame:
     """Dock each ligand and rank by hybrid or ML score.
 
@@ -105,6 +106,7 @@ def screen_library(
                 rerank=rerank,
                 coord_water=int(coord_water),
                 donor_chem_scale=float(donor_chem_scale),
+                include_chem=include_chem,
             )
         except Exception as exc:  # noqa: BLE001 — keep screening going
             hits.append(

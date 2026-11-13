@@ -39,6 +39,7 @@ def _cmd_dock(args: argparse.Namespace) -> int:
         coord_water=int(args.coord_water),
         donor_chem_scale=float(getattr(args, "donor_chem_scale", 0.0)),
         thermo=bool(getattr(args, "thermo", False)),
+        include_chem=bool(getattr(args, "include_chem", True)),
     )
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
@@ -117,6 +118,7 @@ def _cmd_screen(args: argparse.Namespace) -> int:
         coord_water=int(args.coord_water),
         donor_chem_scale=float(getattr(args, "donor_chem_scale", 0.0)),
         thermo=bool(getattr(args, "thermo", False)),
+        include_chem=bool(getattr(args, "include_chem", True)),
     )
     out = Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)
@@ -242,6 +244,13 @@ def build_parser() -> argparse.ArgumentParser:
     )
     s.add_argument("--write-poses", dest="write_poses", action="store_true", help="write best PDB per ranked hit")
     s.add_argument("--pose-dir", dest="pose_dir", default=None)
+    s.add_argument(
+        "--no-chem",
+        dest="include_chem",
+        action="store_false",
+        help="score with the geometric terms only; the default adds the hydrophobic, "
+             "rotation and desolvation terms used in the paper",
+    )
     s.add_argument("--n-spin", dest="n_spin", type=int, default=8)
     s.add_argument("--max-poses", dest="max_poses", type=int, default=5)
     s.add_argument("--water", default=None, help="optional PDB of crystallographic waters to merge")
