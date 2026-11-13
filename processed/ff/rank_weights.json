@@ -1,0 +1,18 @@
+{
+  "created_utc": "2026-10-16T00:18:29.946974+00:00",
+  "n_complexes": 29,
+  "n_poses": 1200,
+  "seed": 42,
+  "per_metal": 3,
+  "train_sampled_success": 0.9310344827586207,
+    "train_top1_success": 0.5172413793103449,
+    "note": "Public-10 best top-1 used coord=0.35 with centroid/geo/contact as sort tie-breakers only; geo/contact linear mix overfit the 29-complex train sample.",
+    "rank_weights": {
+      "coord": 0.35,
+      "geo": 0.0,
+      "cpen": 0.0,
+      "contact": 0.0
+    },
+  "threshold_angstrom": 2.0,
+  "split": "time_split==train"
+}

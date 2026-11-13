@@ -1,0 +1,29 @@
+MetGeoDock — Academic and Non-Commercial License
+Copyright (c) 2026 Kai Wang
+
+MetGeoDock is free of charge for academic and non-commercial use.
+
+1. GRANT. You may use, copy, modify and redistribute this software and its
+   documentation, in source or binary form, for teaching, academic research
+   and non-commercial evaluation, provided that this licence text and the
+   copyright notice above are retained in all copies and substantial portions.
+
+2. REDISTRIBUTION. Modified versions must be distributed under this same
+   licence and must state clearly what was changed. You may not represent a
+   modified version as the original software.
+
+3. COMMERCIAL USE. Any use by, for, or on behalf of a for-profit entity —
+   including internal research, product development, or provision of a paid
+   service — requires a separate written licence from the copyright holder.
+   Contact the authors to obtain one.
+
+4. CITATION. Academic publications that use MetGeoDock must cite the
+   accompanying paper (see CITATION.cff).
+
+5. NO WARRANTY. THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY
+   KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+   IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+   DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+   OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+   USE OR OTHER DEALINGS IN THE SOFTWARE.

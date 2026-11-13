@@ -1,0 +1,82 @@
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+envs/metgeodock/
+.venv/
+logs/
+*.log
+.DS_Store
+
+# Raw crystal trees and third-party dumps — never upload
+ORI_PDB_LIGAND/
+ORI_PDB_LIGAND.tgz
+OUTPUT_DOCK/
+OUTPUT_DOCK.tgz
+GMDOCK-WK/
+data/raw/
+data/bindingdb/
+data/chembl/
+
+# Derived docks / large tables stay local; JSON summaries may be added
+processed/*
+!processed/ff/
+!processed/ff/metalgeo_params.json
+!processed/maps/
+!processed/maps/coord_density.npz
+!processed/agri_vs/
+processed/agri_vs/**
+!processed/agri_vs/library_all.csv
+!processed/agri_vs/build_summary.json
+!processed/agri_vs/hppd/
+!processed/agri_vs/gs/
+!processed/agri_vs/igpd/
+processed/agri_vs/hppd/**
+processed/agri_vs/gs/**
+processed/agri_vs/igpd/**
+!processed/agri_vs/hppd/library.csv
+!processed/agri_vs/gs/library.csv
+!processed/agri_vs/igpd/library.csv
+
+results/*.csv
+!results/*.json
+figures/*.png
+figures/*.pdf
+manuscript/jacs_package/~$*
+*.nc
+*.h5
+*.ckpt
+
+# Optional local checkpoints (small .pt may be force-added)
+processed/ml/*.csv
+
+# 大体积本地目录（不入库；第三方结构与中间产物）
+docking/
+third_party/
+submission_20261108/
+figures_final/
+
+# 投稿材料
+*/jacs_package/
+*.docx
+!examples/**/*.docx
+
+# MetalloDock 官方测试集（原始 SDF，体积大；只保留 JSON 汇总）
+results/mdl_official/
+!results/mdl_official/*.json
+
+# 论文数据与图（随论文提交，不进软件仓库；DATA.md 说明如何生成）
+results/
+figures/
+manuscript/
+dataset_release/
+reports/
+*.bak
+wk_gmdock.c
+# 指向本地第三方数据的符号链接
+ORI_PDB_LIGAND
+OUTPUT_DOCK
+envs

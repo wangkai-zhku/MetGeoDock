@@ -1,0 +1,22 @@
+# Literature docking success (RMSD < 2 A) from Zhang et al.,
+# J. Am. Chem. Soc. 2026, 148, 3086-3101, doi:10.1021/jacs.5c15876.
+# These numbers are NOT computed in this repository; they are cited for comparison.
+citation: "Zhang et al., J. Am. Chem. Soc. 2026, 148, 3086-3101"
+doi: "10.1021/jacs.5c15876"
+test_set: "custom time split, 541 complexes, 7 metals"
+success_rmsd_angstrom: 2.0
+methods:
+  MetalloDock: 0.786
+  SurfDock: 0.754
+  AlphaFold3: 0.689
+  Glide_SP: 0.484
+  MetalloDock_bimetal: 0.744
+# Preprocessing required by the MetalloDock GitHub README (copied under
+# processed/metallodock_ref/README.md): the method does not ingest coordinating
+# water or leftover extra metals. Bimetal 74.4% is a prepared-subset rate.
+protocol:
+  water: "Remove water/heteroatoms/extraneous metals"
+  extra_metals: "Remove water/heteroatoms/extraneous metals"
+  keep_coordinating_water: false
+  keep_extraneous_metals: false
+  prepared_bimetal_ok: true

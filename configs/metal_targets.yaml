@@ -1,0 +1,109 @@
+# Open experimental activity sources for the 10 GPDOCK metal ions.
+# ChEMBL target IDs are SINGLE PROTEIN entries with catalytic/structural metal
+# ions documented in UniProt. Cadmium has few therapeutic assays; the Cd set
+# is therefore smaller and is reported separately.
+#
+# Curation (applied in scripts/data/fetch_chembl_activities.py):
+#   assay_type=B, standard_relation='=', pchembl_value present,
+#   confidence_score>=8, drop data_validity_comment and potential_duplicate.
+
+metals:
+  zn:
+    display: Zn(II)
+    sources: [chembl, pdbbind_index]
+    targets:
+      - {chembl_id: CHEMBL1937, uniprot: Q92769, name: HDAC2, pdb: "3MAX"}
+      - {chembl_id: CHEMBL325, uniprot: Q13547, name: HDAC1, pdb: "5ICN"}
+      - {chembl_id: CHEMBL1865, uniprot: Q9BY41, name: HDAC8, pdb: "2V5W"}
+      - {chembl_id: CHEMBL205, uniprot: P00918, name: CA2, pdb: "3CAJ"}
+      - {chembl_id: CHEMBL1808, uniprot: P12821, name: ACE, pdb: "1O86"}
+      - {chembl_id: CHEMBL321, uniprot: P14780, name: MMP9, pdb: "1GKC"}
+      - {chembl_id: CHEMBL280, uniprot: P45452, name: MMP13, pdb: "830C"}
+      - {chembl_id: CHEMBL261, uniprot: O15379, name: HDAC3, pdb: "4A69"}
+      - {chembl_id: CHEMBL3524, uniprot: Q9UBN7, name: HDAC6, pdb: "5EDU"}
+      - {chembl_id: CHEMBL3310, uniprot: P56524, name: HDAC4, pdb: "2VQM"}
+      - {chembl_id: CHEMBL3394, uniprot: Q16790, name: CA9, pdb: "3IAI"}
+      - {chembl_id: CHEMBL3242, uniprot: O43570, name: CA12, pdb: "1JD0"}
+      - {chembl_id: CHEMBL333, uniprot: P08253, name: MMP2, pdb: "1QIB"}
+      - {chembl_id: CHEMBL332, uniprot: P08254, name: MMP3, pdb: "1HY7"}
+      - {chembl_id: CHEMBL231, uniprot: P03956, name: MMP1, pdb: "966C"}
+      - {chembl_id: CHEMBL4801, uniprot: P78536, name: ADAM17, pdb: "2FV5"}
+      - {chembl_id: CHEMBL3636, uniprot: P00915, name: CA1, pdb: "1AZM"}
+      - {chembl_id: CHEMBL217, uniprot: P35354, name: COX2_note, pdb: null, note: "not a Zn enzyme; excluded in fetch"}
+  ca:
+    display: Ca(II)
+    sources: [chembl]
+    targets:
+      - {chembl_id: CHEMBL2107, uniprot: P04054, name: PLA2G1B, pdb: "1BP2"}
+      - {chembl_id: CHEMBL2095194, uniprot: P07306, name: Annexin_note, pdb: null, note: "family; prefer SINGLE PROTEIN"}
+      - {chembl_id: CHEMBL6142, uniprot: P04080, name: CSTB_note, pdb: null, note: "optional"}
+      - {chembl_id: CHEMBL2114, uniprot: P14555, name: PLA2G2A, pdb: "1POE"}
+      - {chembl_id: CHEMBL1902, uniprot: P07384, name: CAPN1, pdb: "2ARY"}
+      - {chembl_id: CHEMBL1792, uniprot: P07385, name: CAPN2, pdb: "1KFU"}
+  mg:
+    display: Mg(II)
+    sources: [chembl]
+    targets:
+      - {chembl_id: CHEMBL2014, uniprot: P12497, name: HIV1_integrase, pdb: "3LPT"}
+      - {chembl_id: CHEMBL301, uniprot: P24941, name: CDK2, pdb: "1HCK"}
+      - {chembl_id: CHEMBL1822, uniprot: P0AES6, name: GyrB, pdb: "4DUH"}
+      - {chembl_id: CHEMBL220, uniprot: P11309, name: PIM1, pdb: "1XWS"}
+      - {chembl_id: CHEMBL5600, uniprot: P22413, name: ENPP1, pdb: "6WEK"}
+      - {chembl_id: CHEMBL1907608, uniprot: Q9UNQ0, name: ABCG2_note, pdb: null, note: "not Mg catalytic; excluded"}
+  mn:
+    display: Mn(II)
+    sources: [chembl]
+    targets:
+      - {chembl_id: CHEMBL3830, uniprot: P05089, name: ARG1, pdb: "2AEB"}
+      - {chembl_id: CHEMBL3891, uniprot: P00966, name: ASS1, pdb: "2NZ2"}
+      - {chembl_id: CHEMBL6148, uniprot: P00441, name: SOD1_cu_zn, pdb: "1HL5", note: "Cu/Zn SOD; MnSOD is SOD2"}
+      - {chembl_id: CHEMBL2094108, uniprot: P04179, name: SOD2, pdb: "1AP5"}
+      - {chembl_id: CHEMBL4142, uniprot: P78540, name: ARG2, pdb: "1PQ3"}
+  fe2:
+    display: Fe(II)
+    sources: [chembl]
+    targets:
+      - {chembl_id: CHEMBL4261, uniprot: Q9GZT9, name: EGLN1_PHD2, pdb: "3HQR"}
+      - {chembl_id: CHEMBL215, uniprot: P09917, name: ALOX5, pdb: "3O8Y"}
+      - {chembl_id: CHEMBL2034, uniprot: Q96KS0, name: EGLN2, pdb: "3H4K"}
+      - {chembl_id: CHEMBL5736, uniprot: Q9NWT6, name: HIF1AN_FIH, pdb: "1H2L"}
+      - {chembl_id: CHEMBL2391, uniprot: O60341, name: KDM1A_note, pdb: "2H94", note: "FAD enzyme not Fe; excluded"}
+  fe3:
+    display: Fe(III)
+    sources: [chembl]
+    targets:
+      - {chembl_id: CHEMBL340, uniprot: P08684, name: CYP3A4, pdb: "1TQN"}
+      - {chembl_id: CHEMBL3553, uniprot: P05177, name: CYP1A2, pdb: "2HI4"}
+      - {chembl_id: CHEMBL3622, uniprot: P10635, name: CYP2D6, pdb: "2F9Q"}
+      - {chembl_id: CHEMBL206, uniprot: P11511, name: CYP19A1, pdb: "3EQM"}
+      - {chembl_id: CHEMBL239, uniprot: P05181, name: CYP2E1, pdb: "3E6I"}
+      - {chembl_id: CHEMBL2360, uniprot: P20813, name: CYP2B6, pdb: "3IBD"}
+  cu:
+    display: Cu(II)
+    sources: [chembl]
+    targets:
+      - {chembl_id: CHEMBL1973, uniprot: P14679, name: TYR, pdb: "5M8L"}
+      - {chembl_id: CHEMBL2095199, uniprot: P00441, name: SOD1, pdb: "1HL5"}
+      - {chembl_id: CHEMBL6140, uniprot: P15121, name: AKR1B1, pdb: null, note: "not Cu; excluded"}
+      - {chembl_id: CHEMBL1941, uniprot: P09172, name: DBH, pdb: "4ZEL"}
+  co:
+    display: Co(II)
+    sources: [chembl]
+    targets:
+      - {chembl_id: CHEMBL3922, uniprot: P50579, name: METAP2, pdb: "1B6A"}
+      - {chembl_id: CHEMBL3882, uniprot: P56221, name: METAP1, pdb: "2B3K"}
+  cd:
+    display: Cd(II)
+    sources: [chembl]
+    targets:
+      - {chembl_id: CHEMBL205, uniprot: P00918, name: CA2_cd_proxy, pdb: "1CA2", note: "Cd-substituted CA used structurally; activities are Zn-CA2 and must be labelled as proxy"}
+      - {chembl_id: CHEMBL2095193, uniprot: P04732, name: MT1E, pdb: "1MHU"}
+  ni:
+    display: Ni(II)
+    sources: [chembl]
+    targets:
+      - {chembl_id: CHEMBL3890, uniprot: Q04760, name: GLO1, pdb: "1QIP", note: "human GLO1 is Zn; bacterial GLO1 can be Ni"}
+      - {chembl_id: CHEMBL1075104, uniprot: P0A9X1, name: urease_note, pdb: "1FWJ"}
+      - {chembl_id: CHEMBL6148, uniprot: P00441, name: SOD1_ni_proxy, pdb: "1HL5", note: "not Ni; excluded as not Ni"}
+
+exclude_notes_containing: ["excluded", "not a Zn", "not Cu", "not Ni", "not Mg", "not Fe", "same UniProt"]

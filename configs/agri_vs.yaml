@@ -1,0 +1,168 @@
+# Unified agrochemical VS library (retrospective MoA recovery).
+#
+# Why this set (not a handful of named molecules):
+# 1) Targets are the metal-containing herbicide enzymes in all-agricultural-dock
+#    (catalytic Fe/Mn). Same structures for every ligand.
+# 2) ONE ligand library is docked to ALL targets. Labels are assigned before
+#    docking from public annotations; nothing is dropped after seeing scores.
+# 3) Actives = all ChEMBL compounds with pChEMBL>=6 on that enzyme class
+#    (unique canonical SMILES, 10-45 heavy atoms), plus HRAC commercial
+#    inhibitors of that MoA. HPPD uses plant CHEMBL2242740 and human CHEMBL1861
+#    (same EC 1.13.11.27; triketone/pyrazole herbicides are class-conserved).
+#    GS uses phosphinates/MSO only: the human GS pChEMBL dump is steroid-
+#    contaminated, so rows without phosphorus are excluded (pre-registered).
+# 4) Decoys for target T = the rest of the same library: (a) ChEMBL actives of
+#    the other two metalloproteins, (b) HRAC/IRAC commercial pesticides of
+#    other MoA. This is cross-target + panel decoys, not hand-picked "easy"
+#    negatives.
+# 5) Size cap: at most 80 ChEMBL actives / target, highest pChEMBL after
+#    uniqueness. Commercial panel is the full list below (misses logged).
+# 6) Wet-lab is unavailable; this is a public-activity retrospective screen.
+agri_root: /home/wangkai/cursor-task/all-agricultural-dock
+min_heavy_atoms: 10
+max_heavy_atoms: 45
+max_chembl_actives: 80
+pocket_A: 15.0
+pchembl_active: 6.0
+targets:
+  hppd:
+    name: 4-hydroxyphenylpyruvate dioxygenase
+    metal: fe2
+    pdb: Target/HPPD/1tg5.pdb
+    chembl_target_ids:
+      - CHEMBL2242740
+      - CHEMBL1861
+    hrac: F2
+    require_phosphorus: false
+    named_actives:
+      - mesotrione
+      - sulcotrione
+      - tembotrione
+      - topramezone
+      - isoxaflutole
+      - pyrasulfotole
+      - bicyclopyrone
+      - fenquinotrione
+      - nitisinone
+  gs:
+    name: glutamine synthetase
+    metal: mn
+    pdb: Target/glutamine synthetase/2ojw.pdb
+    chembl_target_ids:
+      - CHEMBL4612
+    hrac: H
+    require_phosphorus: true
+    named_actives:
+      - glufosinate
+      - phosphinothricin
+      - methionine sulfoximine
+      - L-methionine sulfoximine
+      - bialaphos
+  igpd:
+    name: imidazole-glycerol phosphate dehydratase
+    metal: mn
+    pdb: 8qav.pdb
+    chembl_target_ids:
+      - CHEMBL3226
+    hrac: ""
+    require_phosphorus: false
+    named_actives:
+      - (2S,3S)-2,3-dihydroxy-3-(1H-imidazol-5-yl)propyl dihydrogen phosphate
+# HRAC/IRAC commercial panel. Entire list is queried; unresolved names are
+# logged, not silently dropped from the protocol. F2/H names are actives for
+# HPPD/GS; all others are decoys for every metal target.
+commercial_panel:
+  F2_hppd:
+    - mesotrione
+    - sulcotrione
+    - tembotrione
+    - topramezone
+    - isoxaflutole
+    - pyrasulfotole
+    - bicyclopyrone
+    - nitisinone
+  H_gs:
+    - glufosinate
+    - phosphinothricin
+    - bialaphos
+  A_accase:
+    - clodinafop
+    - diclofop
+    - fluazifop
+    - quizalofop
+    - sethoxydim
+    - clethodim
+  B_als:
+    - imazethapyr
+    - imazamox
+    - imazaquin
+    - nicosulfuron
+    - rimsulfuron
+    - chlorimuron-ethyl
+    - thifensulfuron
+    - metsulfuron
+    - chlorsulfuron
+    - bensulfuron
+    - pyrazosulfuron
+    - bispyribac
+    - pyrithiobac
+  C_psii:
+    - atrazine
+    - simazine
+    - terbuthylazine
+    - ametryn
+    - metribuzin
+    - diuron
+    - linuron
+    - isoproturon
+    - bentazon
+    - bromoxynil
+  D_psi:
+    - paraquat
+    - diquat
+  E_ppo:
+    - oxyfluorfen
+    - acifluorfen
+    - fomesafen
+    - lactofen
+    - flumioxazin
+    - sulfentrazone
+    - oxadiazon
+  F1_pds:
+    - norflurazon
+    - fluridone
+    - diflufenican
+    - picolinafen
+  G_epsps:
+    - glyphosate
+  K_seedling:
+    - trifluralin
+    - pendimethalin
+    - acetochlor
+    - S-metolachlor
+    - alachlor
+    - pyroxasulfone
+    - flufenacet
+  O_auxin:
+    - 2,4-D
+    - MCPA
+    - dicamba
+    - clopyralid
+    - picloram
+    - triclopyr
+    - fluroxypyr
+    - quinclorac
+  insecticide:
+    - chlorpyrifos
+    - malathion
+    - carbaryl
+    - imidacloprid
+    - acetamiprid
+    - permethrin
+    - cypermethrin
+    - fipronil
+    - chlorantraniliprole
+fallback_smiles:
+  "2,4-D": O=C(O)COc1ccc(Cl)cc1Cl
+  "(2S,3S)-2,3-dihydroxy-3-(1H-imidazol-5-yl)propyl dihydrogen phosphate": O=P(O)(O)OC[C@@H](O)[C@@H](O)c1cnc[nH]1
+  IG2: O=P(O)(O)OCC(O)C(O)c1cnc[nH]1

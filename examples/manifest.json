@@ -1,0 +1,16 @@
+{
+  "created_utc": "2026-11-08T23:00:00+00:00",
+  "minimal": {
+    "pdb": "8jao",
+    "metal": "zn",
+    "description": "single-complex redock with reference pose"
+  },
+  "screening_hdac8": {
+    "receptor": "processed/hdac_receptors/2V5W_A_h.pdb (HDAC8, open, Zn first shell intact)",
+    "n_actives": 8,
+    "n_decoys": 12,
+    "metal": "zn",
+    "verified": "6 of 8 inhibitors in the top 10, first at rank 1",
+    "runtime": "~10 min on one CPU core"
+  }
+}

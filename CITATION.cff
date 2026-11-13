@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+title: MetGeoDock
+message: If you use this software, please cite the parent geometry methods and MetalloDock as the comparison protocol.
+type: software
+authors:
+  - family-names: Wang
+    given-names: Kai
+version: 0.1.0
+license: LicenseRef-Academic-NonCommercial
+url: https://github.com/wangkai-zhku/MetGeoDock
+references:
+  - title: GM-DockZn
+    type: article
+    doi: 10.1093/bioinformatics/btaa292
+  - title: GPDOCK
+    type: article
+    doi: 10.1093/bib/bbac620
+  - title: MetalloDock
+    type: article
+    doi: 10.1021/jacs.5c15876
