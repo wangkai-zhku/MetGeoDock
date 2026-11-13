@@ -1,8 +1,7 @@
 # MetGeoDock
 
 [![PyPI](https://img.shields.io/pypi/v/metgeodock)](https://pypi.org/project/metgeodock/)
-[![Python](https://img.shields.io/pypi/pyversions/metgeodock)](https://pypi.org/project/metgeodock/)
-[![Downloads](https://img.shields.io/pypi/dm/metgeodock)](https://pypi.org/project/metgeodock/)
+[![Python](https://img.shields.io/badge/python-3.10%2B-blue)](https://pypi.org/project/metgeodock/)
 [![License](https://img.shields.io/badge/license-academic%20%2F%20non--commercial-blue)](LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/wangkai-zhku/MetGeoDock?style=social)](https://github.com/wangkai-zhku/MetGeoDock)
 
